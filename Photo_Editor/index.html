@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lumix — Photo Editor</title>
+    <meta name="description" content="A powerful, beautiful browser-based photo editor with real-time filters and presets.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="stylesheet" href="theme.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Animated Background Blobs -->
+    <div class="bg-blob blob-1"></div>
+    <div class="bg-blob blob-2"></div>
+    <div class="bg-blob blob-3"></div>
+
+
+    <main>
+        <section>
+            <!-- LEFT: Canvas Area -->
+            <div class="left">
+                <div class="top">
+                    <label for="image-input" class="btn btn-primary" id="choose-btn">
+                        <i class="ri-image-add-line"></i>
+                        Choose Image
+                        <input type="file" accept="image/*" hidden id="image-input">
+                    </label>
+                    <button class="btn btn-danger" id="reset-btn">
+                        <i class="ri-refresh-line"></i>
+                        Reset
+                    </button>
+                    <button class="btn btn-success" id="download-btn">
+                        <i class="ri-download-2-line"></i>
+                        Download
+                    </button>
+                </div>
+                <div class="bottom">
+                    <div class="placeholder" id="placeholder">
+                        <div class="placeholder-icon-wrap">
+                            <i class="ri-image-line"></i>
+                        </div>
+                        <p class="placeholder-title">No Image Chosen</p>
+                        <p class="placeholder-sub">Click "Choose Image" to get started</p>
+                    </div>
+                    <canvas id="image-canvas"></canvas>
+                </div>
+            </div>
+
+            <!-- RIGHT: Filter Panel -->
+            <div class="right">
+                <div class="panel-header">
+                    <h2><i class="ri-equalizer-2-line"></i> Filters</h2>
+                </div>
+
+                <!-- Presets Section -->
+                <div class="presets-section">
+                    <p class="section-label"><i class="ri-sparkling-line"></i> Presets</p>
+                    <div class="presets-grid" id="presets-grid">
+                        <!-- Preset buttons injected by JS -->
+                    </div>
+                </div>
+
+                <div class="divider"></div>
+
+                <!-- Manual Sliders -->
+                <p class="section-label"><i class="ri-sliders-line"></i> Manual Adjustments</p>
+                <div class="filters" id="filters-container">
+                    <!-- Filter sliders injected by JS -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
